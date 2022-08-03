@@ -3,31 +3,30 @@
 let carrito = []
 
 class Producto {
-    constructor(id, producto, descripcion, precio) {
+    constructor(id, producto, modelo, descripcion, precio) {
         this.id = id
         this.producto = producto
+        this.modelo = modelo
         this.descripcion = descripcion
         this.precio = precio
+    
     }
 }
 
-const producto1 = new Producto (355, 'Porta Sahumerio Hanuman','De ceramica, pintado a mano', 600)
-const producto2 = new Producto (356, 'El Tarot como Llave','Autor: Dalia Walker', 4800)
-const producto3 = new Producto (357, 'Mazo Tarot Viceversa', 'Autora:Lunaea Weatherstone', 30, 2000)
-const producto4 = new Producto (358, 'Oraculo del Gato', 'Autora: La Watson', 1200)
-const producto5 = new Producto (359, 'Sahumo Akasha', 'Romero, Lavanda, Canela y palo santo', 1200)
+    const producto1 = new Producto (355, 'Porta Sahumerio Hanuman', 'hanuman','De ceramica, pintado a mano', 600)
+    const producto2 = new Producto (356, 'El Tarot como Llave','llave','Autor: Dalia Walker', 4800)
+    const producto3 = new Producto (357, 'Mazo Tarot Viceversa','viceversa', 'Autora:Lunaea Weatherstone', 2500)
+    const producto4 = new Producto (358, 'Oraculo del Gato','oraculo', 'Autora: La Watson', 1200)
+    const producto5 = new Producto (359, 'Sahumo Akasha','sahumo','Romero, Lavanda, Canela y palo santo', 600)
 
 const productos = [producto1, producto2, producto3, producto4, producto5]
 
 
-// Funcion para que el usuario elija la cantidad de unidades de su producto
+//Elegir cantidad de producto seleccionado 
 
-const editarProductoElegido = (productoSeleccionado) => {
+const editarProductoSeleccionado = (productoSeleccionado) => {
     const productoElegido = {
-        id: productoSeleccionado.id,
-        producto: productoSeleccionado.producto,
-        descripcion: productoSeleccionado.descripcion,
-        cantidad: 0,
+        cantidad: 1,
         precio: productoSeleccionado.precio,
     }
 
@@ -37,31 +36,32 @@ const editarProductoElegido = (productoSeleccionado) => {
 }
 
 
-//Pedimos al usuario que elija que producto quiere comprar
-const eleccionProducto = () => {
-    const eleccionUsuario = prompt('Elegi el numero de la opcion deseada: Porta Sahumerio, El tarot como llave, Mazo Tarot Viceversa, Oraculo del Gato, Sahumo Akasha').toLowerCase()
+// Solicitarle al usuario la elección del producto
 
-    switch (eleccionUsuario) {
-        case 'Porta Sahumerio Hanuman':
-            console.log('Elegiste Porta Sahumerio Hanuman')
-            carrito.push(eleccionProducto(producto1))
+const eleccionProducto = () => {
+    const seleccionUsuario = prompt('Elegi el articulo que deseas comprar: hanuman, llave, viceversa, oraculo, sahumo').toLowerCase()
+
+    switch (seleccionUsuario) {
+        case 'hanuman':
+            console.log('Elegiste porta sahumerio hanuman')
+            carrito.push(editarProductoSeleccionado(producto1))
             break
-        case 'El Tarot como Llave':
-            console.log('Elegiste El tarot como llave')
-            carrito.push(eleccionProducto(producto2))
+        case 'llave':
+            console.log('Elegiste El tarot como Llave')
+            carrito.push(editarProductoSeleccionado(producto2))
             break
-        case 'Mazo Tarot Vicevers':
+        case 'viceversa':
             console.log('Elegiste Mazo Tarot Viceversa')
-            carrito.push(eleccionProducto(producto3))
+            carrito.push(editarProductoSeleccionado(producto3))
             break
-        case 'Oraculo del Gato':
-            console.log('Elegiste Oraculo del Gato')
-            carrito.push(eleccionProducto(producto4))
+        case 'oraculo':
+            console.log('Elegiste Oraculo del gato')
+            carrito.push(editarProductoSeleccionado(producto4))
             break
-        case 'Sahumo Akasha':
+        case 'sahumo':
             console.log('Elegiste Sahumo Akasha')
-            carrito.push(eleccionProducto(producto5))
-            break
+            carrito.push(editarProductoSeleccionado(producto5))
+             break  
         default:
             console.log('Por favor, elegi un modelo correcto')
             break
@@ -73,7 +73,7 @@ const eleccionProducto = () => {
 }
 
 
-//Total de mis productos
+// Funcion para sumar el total de mis productos
 const totalCarrito = () => {
     let sumaTotalCarrito = 0
     for (const producto of carrito) {
@@ -83,9 +83,10 @@ const totalCarrito = () => {
 }
 
 
-// EJECUCIONES
+//Total de la compra
 eleccionProducto()
 
+console.log(carrito);
 alert('Gracias por su compra, su total es de $' + totalCarrito())
 console.log('Gracias por su compra, su total es de $' + totalCarrito())
 
