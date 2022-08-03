@@ -1,4 +1,4 @@
-//Carrito de compras.
+//Carrito de compras
 
 let carrito = []
 
@@ -22,7 +22,7 @@ class Producto {
 const productos = [producto1, producto2, producto3, producto4, producto5]
 
 
-//Elegir cantidad de producto seleccionado.
+//Elegir cantidad de producto seleccionado
 
 const editarProductoSeleccionado = (productoSeleccionado) => {
     const productoElegido = {
@@ -36,7 +36,7 @@ const editarProductoSeleccionado = (productoSeleccionado) => {
 }
 
 
-// Solicitarle al usuario la elección del producto.
+// Solicitarle al usuario la elección del producto
 
 const eleccionProducto = () => {
     const seleccionUsuario = prompt('Elegi el articulo que deseas comprar: hanuman, llave, viceversa, oraculo, sahumo').toLowerCase()
@@ -73,7 +73,7 @@ const eleccionProducto = () => {
 }
 
 
-// Funcion para sumar el total de mis productos.
+// Funcion para sumar el total de mis producto
 const totalCarrito = () => {
     let sumaTotalCarrito = 0
     for (const producto of carrito) {
@@ -83,7 +83,7 @@ const totalCarrito = () => {
 }
 
 
-//Total de la compra.
+//Total de la compra
 eleccionProducto()
 
 console.log(carrito);
