@@ -1,92 +1,58 @@
-//Carrito de compras
+//Carrito de compras en Seccion Productos
 
 let carrito = []
 
 class Producto {
-    constructor(id, producto, modelo, descripcion, precio) {
+    constructor(id, producto, imgSrc, modelo, descripcion, precio) {
         this.id = id
         this.producto = producto
+        this.imgSrc = imgSrc
         this.modelo = modelo
         this.descripcion = descripcion
         this.precio = precio
-    
     }
 }
 
-    const producto1 = new Producto (355, 'Porta Sahumerio Hanuman', 'hanuman','De ceramica, pintado a mano', 600)
-    const producto2 = new Producto (356, 'El Tarot como Llave','llave','Autor: Dalia Walker', 4800)
-    const producto3 = new Producto (357, 'Mazo Tarot Viceversa','viceversa', 'Autora:Lunaea Weatherstone', 2500)
-    const producto4 = new Producto (358, 'Oraculo del Gato','oraculo', 'Autora: La Watson', 1200)
-    const producto5 = new Producto (359, 'Sahumo Akasha','sahumo','Romero, Lavanda, Canela y palo santo', 600)
+    const producto1 = new Producto (355, 'Porta Sahumerio Hanuman','../Img/portasahumeriohanuman.jpg', 'hanuman','De ceramica, pintado a mano', 600,)
+    const producto2 = new Producto (356, 'El Tarot como Llave','../Img/tarotcomollave.jpg','llave','Autor: Dalia Walker', 4800)
+    const producto3 = new Producto (357, 'Mazo Tarot Viceversa','../Img/tarotviceversa.jpg','viceversa', 'Autora:Lunaea Weatherstone', 2500)
+    const producto4 = new Producto (358, 'Oraculo del Gato','../Img/oraculodelgato.jpg','oraculo', 'Autora: La Watson', 1200)
+    const producto5 = new Producto (359, 'Sahumo Akasha','../Img/sahumos.jpg','sahumo','Romero, Lavanda, Canela y palo santo', 600)
+
 
 const productos = [producto1, producto2, producto3, producto4, producto5]
 
+const cardContainerQuery = document.querySelector("#cardContainer")
 
-//Elegir cantidad de producto seleccionado
+productos.forEach ((producto)=> {
+    const nuevoDiv = document.createElement("div")
+    nuevoDiv.innerHTML= `
+    <h3 class="cardTitle">${producto.producto}</h3><br>
+    <img src="${producto.imgSrc}" class="cardImg">
+    <p class="cardDesc">${producto.descripcion}</p><br>
+    <span class="cardPrice">$${producto.precio}</span><br><br>
+    <button class="butonCTA" data-id=${producto.id}>Agregar al carrito</button><br>`
+    nuevoDiv.className = "card"
+    console.log(nuevoDiv)
+    cardContainerQuery.append(nuevoDiv)
+})
 
-const editarProductoSeleccionado = (productoSeleccionado) => {
-    const productoElegido = {
-        cantidad: 1,
-        precio: productoSeleccionado.precio,
-    }
+//Evento click sobre botón Agregar al carrito. 
 
-    productoElegido.cantidad = Number(prompt('Cuantas unidades quiere sumar al carrito?'))
+const botonesCarrito = document.querySelectorAll(".butonCTA") 
 
-    return productoElegido
+
+const agregarProducto = (e) => {
+    e.target.innerHTML= "Agregaste este producto"
+    console.log(e.target);
 }
 
+botonesCarrito.forEach((boton) => {
+    boton.addEventListener("click", agregarProducto)
+})
 
-// Solicitarle al usuario la elección del producto
+localStorage.setItem("Key1","Este es el dato")
 
-const eleccionProducto = () => {
-    const seleccionUsuario = prompt('Elegi el articulo que deseas comprar: hanuman, llave, viceversa, oraculo, sahumo').toLowerCase()
+localStorage.getItem("")
 
-    switch (seleccionUsuario) {
-        case 'hanuman':
-            console.log('Elegiste porta sahumerio hanuman')
-            carrito.push(editarProductoSeleccionado(producto1))
-            break
-        case 'llave':
-            console.log('Elegiste El tarot como Llave')
-            carrito.push(editarProductoSeleccionado(producto2))
-            break
-        case 'viceversa':
-            console.log('Elegiste Mazo Tarot Viceversa')
-            carrito.push(editarProductoSeleccionado(producto3))
-            break
-        case 'oraculo':
-            console.log('Elegiste Oraculo del gato')
-            carrito.push(editarProductoSeleccionado(producto4))
-            break
-        case 'sahumo':
-            console.log('Elegiste Sahumo Akasha')
-            carrito.push(editarProductoSeleccionado(producto5))
-             break  
-        default:
-            console.log('Por favor, elegi un modelo correcto')
-            break
-    }
-
-    if (confirm('Desea agregar otro producto a su compra?')) {
-        eleccionProducto()
-    }
-}
-
-
-// Funcion para sumar el total de mis producto
-const totalCarrito = () => {
-    let sumaTotalCarrito = 0
-    for (const producto of carrito) {
-        sumaTotalCarrito += producto.precio * producto.cantidad
-    }
-    return sumaTotalCarrito
-}
-
-
-//Total de la compra
-eleccionProducto()
-
-console.log(carrito);
-alert('Gracias por su compra, su total es de $' + totalCarrito())
-console.log('Gracias por su compra, su total es de $' + totalCarrito())
 
