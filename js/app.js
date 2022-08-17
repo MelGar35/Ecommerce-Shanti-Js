@@ -1,3 +1,26 @@
+
+//Logueo usuario en seccion Productos
+
+let datosIngresoSesion = []
+
+const inputMail = document.querySelector("#inputMail")
+const inputClave = document.querySelector("#inputClave")
+const botonEnviar = document.querySelector("#enviar")
+
+botonEnviar.addEventListener("click", ()=>{
+    datosIngresoSesion.push(inputMail.value)
+    datosIngresoSesion.push(inputClave.value)
+    inputMail.value = ""
+    inputClave.value = ""
+    sessionStorage.setItem("datosIngresoSesion", JSON.stringify(datosIngresoSesion))
+    console.log(datosIngresoSesion);
+} )
+
+const datosIngresoGuardados = JSON.parse(sessionStorage.getItem("datosIngresoSesion"))
+
+console.log(datosIngresoGuardados)
+
+
 //Carrito de compras en Seccion Productos
 
 let carrito = []
@@ -51,8 +74,5 @@ botonesCarrito.forEach((boton) => {
     boton.addEventListener("click", agregarProducto)
 })
 
-localStorage.setItem("Key1","Este es el dato")
-
-localStorage.getItem("")
 
 
