@@ -25,24 +25,6 @@ console.log(datosIngresoGuardados)
 
 let carrito = []
 
-class Producto {
-    constructor(id, producto, imgSrc, modelo, descripcion, precio) {
-        this.id = id
-        this.producto = producto
-        this.imgSrc = imgSrc
-        this.modelo = modelo
-        this.descripcion = descripcion
-        this.precio = precio
-    }
-}
-
-    const producto1 = new Producto (355, 'Porta Sahumerio Hanuman','../Img/portasahumeriohanuman.jpg', 'hanuman','De ceramica, pintado a mano', 600,)
-    const producto2 = new Producto (356, 'El Tarot como Llave','../Img/tarotcomollave.jpg','llave','Autor: Dalia Walker', 4800)
-    const producto3 = new Producto (357, 'Mazo Tarot Viceversa','../Img/tarotviceversa.jpg','viceversa', 'Autora:Lunaea Weatherstone', 2500)
-    const producto4 = new Producto (358, 'Oraculo del Gato','../Img/oraculodelgato.jpg','oraculo', 'Autora: La Watson', 1200)
-    const producto5 = new Producto (359, 'Sahumo Akasha','../Img/sahumos.jpg','sahumo','Romero, Lavanda, Canela y palo santo', 600)
-
-
 const productos = [producto1, producto2, producto3, producto4, producto5]
 
 const cardContainerQuery = document.querySelector("#cardContainer")
