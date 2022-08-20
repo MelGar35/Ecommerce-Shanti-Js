@@ -212,7 +212,11 @@ width: 400px;
     
 }
 
-
+.itemsCarrito .botonCantidad{
+    align-items: center;
+    text-align: center;
+    
+}
 /*inicio de media queries*/
 
 @media (max-width: 768px) {
