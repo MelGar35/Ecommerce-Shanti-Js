@@ -33,25 +33,35 @@
                 <br>
             </nav>
         </header>
-
+        <!--Empieza Tienda-->
         <div id="cardContainer" class="grid-item grid-main-productos cardContainer">   
-            <!--Codigo Inyectado desde JS-->
+        <!--Codigo Inyectado desde JS-->
         </div>
+      <!--Termina Tienda-->
 
+      <!--Empieza seccion carrito-->
         <section class="grid-item grid-section-productos carrito">
           <div class="carrito-titulo">
-            <h1>CARRITO</h1>
+            <h1>CARRITO</h1> <br>
           </div>
                 
             <div class="carrito-header">
-                <h6>Producto</h6>
-                    <h6>Precio</h6>
-                    <h6>Cantidad</h6>
-                </div>
+                <h4>Producto</h4>
+                <h4>Precio</h4>
+                <h4>Cantidad</h4>
+                <h4>Eliminar</h4>
+            </div>
            <br>
-           <div class="shopping-cart-items shoppingCartItemsContainer">
+           <!--Empiezan los items del carrito-->
+           <div id="itemsCarrito" class="itemsCarrito itemsCarritoContainer">
+            <img src="../Img/portasahumeriohanuman.jpg" alt="porta-sahumo" width="6%">
+            <h3 class="cardTitle">Hanuman</h3>
+            <span class="cardPrice">card Price</span>
+            <button class="botonEliminar" type="button">X</button>
            </div>
+           <!--Terminan los items del carrito-->
            <br><br>
+           <!--Empieza total de la compra-->
                 <div class="carrito-total">
                     <p><strong>Total:</strong></p>
                     <p class="carrito-total"><strong> 0$</strong></p>
@@ -60,8 +70,9 @@
                     </div>
                     <br>
                 </div>
+            <!--Termina total de la compra--> 
         </section>
-        
+        <!--termina seccion carrito-->
         <aside class="grid-item grid-aside">
             <div class="aside-productos">
                 <br>

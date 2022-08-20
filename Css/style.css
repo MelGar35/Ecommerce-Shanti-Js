@@ -40,6 +40,14 @@
          
 }
 
+.grid-main{
+    grid-area: main;
+    display: flex;
+    padding:40px;
+    align-items: center;
+    flex-direction:column;  
+}
+
 .grid-aside{
     grid-area: aside;
     display: flex;
@@ -98,14 +106,6 @@ a:hover{
     justify-content: center;
 }
 
-.grid-main{
-    grid-area: main;
-    display: flex;
-    padding:40px;
-    align-items: center;
-    flex-direction:column;  
-}
-
 .aside-productos{
     display: inline-block;
     align-items: center;
@@ -153,7 +153,7 @@ width: 400px;
     border-top: 3px solid black;
     flex-direction: column;
 }
-
+/*estilos en carrito*/
 .carrito .carrito-titulo {
    text-align: center;  
    padding: 5px;
@@ -193,6 +193,23 @@ width: 400px;
     color: aliceblue;
     border: solid rgb(169, 112, 170);
     border-radius: 7px;
+}
+
+.itemsCarrito{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid rgb(12, 11, 11);
+    padding-bottom: 15px;
+    margin: 5px;
+}
+
+.itemsCarrito .botonEliminar{
+    background-color: rgb(26, 9, 9);
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 5px;
+    
 }
 
 

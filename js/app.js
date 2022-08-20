@@ -28,6 +28,7 @@ let carrito = []
 const productos = [producto1, producto2, producto3, producto4, producto5]
 
 const cardContainerQuery = document.querySelector("#cardContainer")
+const itemsCarritoQuery = document.querySelector("#itemsCarrito")//nuevo
 
 productos.forEach ((producto)=> {
     const nuevoDiv = document.createElement("div")
@@ -35,7 +36,7 @@ productos.forEach ((producto)=> {
     <h3 class="cardTitle">${producto.producto}</h3><br>
     <img src="${producto.imgSrc}" class="cardImg">
     <p class="cardDesc">${producto.descripcion}</p><br>
-    <span class="cardPrice">$${producto.precio}</span><br><br>
+    <span class="cardPrice">$${producto.precio}.-</span><br><br>
     <button class="butonCTA" data-id=${producto.id}>Agregar al carrito</button><br>`
     nuevoDiv.className = "card"
     console.log(nuevoDiv)
@@ -46,15 +47,26 @@ productos.forEach ((producto)=> {
 
 const botonesCarrito = document.querySelectorAll(".butonCTA") 
 
-
 const agregarProducto = (e) => {
     e.target.innerHTML= "Agregaste este producto"
-    console.log(e.target);
+    
 }
-
 botonesCarrito.forEach((boton) => {
     boton.addEventListener("click", agregarProducto)
+
 })
 
+//Contenido carrito nuevoi
 
+itemsCarrito.forEach ((item)=> {
+    const nuevoDiv2=document.createElement("div")
+    nuevoDiv2.innerHTML=`
+    <img src="${producto.imgSrc}" alt="porta-sahumo" width="6%">
+    <h3 class="cardTitle">${producto.producto}</h3>
+    <span class="cardPrice">$${producto.precio}.-</span>
+    <button class="botonEliminar" type="button">X</button>`
+    nuevoDiv2.className="items"
+    cardContainerQuery.append(itemsCarrito)
+
+})
 
