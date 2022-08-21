@@ -55,19 +55,24 @@ botonesCarrito.forEach((boton) => {
 
 })
 
-//Contenido carrito nuevoi
+//Contenido carrito nuevo
 const itemsCarritoQuery = document.querySelector("#itemsCarrito") //nuevo
 
 
     productos.forEach((producto) => {
-        const itemsCarrito = document.createElement("itemCarrito")
-        itemsCarrito.className= "itemsCarrito itemsCarritoContainer"
+        const itemsCarrito = document.createElement("div")
+        itemsCarrito.className= "itemsCarritoContainer"
+        itemsCarrito.classList.add("itemCarrito")
         itemsCarrito.innerHTML = `
-    <img src="${producto.imgSrc}" alt="${producto.modelo}" width="6%">
-    <h3 class="cardTitle">${producto.producto}</h3>
+    <div class="itemCarrito">
+    <img src="${producto.imgSrc}" class="imgCarrito" alt="${producto.modelo}" width="6%">
+    <h3 class="cardTitle">${producto.modelo}</h3>
+    </div>
     <span class="cardPrice">$${producto.precio}.-</span>
     <input class="botonCantidad" type="number" value="1">
     <button class="botonEliminar" type="button">X</button>`
         itemsCarritoQuery.append(itemsCarrito)
 
     })
+
+   

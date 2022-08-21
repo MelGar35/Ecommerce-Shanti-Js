@@ -152,7 +152,9 @@ width: 400px;
     border-top: 3px solid black;
     flex-direction: column;
 }
+
 /*estilos en carrito*/
+
 .carrito .carrito-titulo {
    text-align: center;  
    padding: 5px;
@@ -196,21 +198,41 @@ width: 400px;
 
 .itemsCarrito{
     display: flex;
+    flex-direction: column;
     justify-content:space-around;
-    flex-direction:row;
-    border-bottom: 1px solid rgb(12, 11, 11);
     padding-bottom: 15px;
     margin: 5px;
-    align-items: center;
-      
+
 }
 
+
 .itemsCarrito .botonEliminar{
-    background-color: rgb(26, 9, 9);
+    background-color: rgb(169, 112, 170);
     color: aliceblue;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 5px ;
+    border: solid rgb(169, 112, 170);
     
+}
+
+.itemCarrito{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+
+ 
+}
+
+.imgCarrito{
+    width: 50px;
+    padding: 20px;
+    
+}
+.botonCantidad{
+    height: 20px;
+    text-align: center;
+    align-items: center;
+    width: 35px;
 }
 
 
