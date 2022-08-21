@@ -1,5 +1,4 @@
 
-
 *{
     margin: 0;
     padding: 0;
@@ -197,11 +196,13 @@ width: 400px;
 
 .itemsCarrito{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content:space-around;
+    flex-direction:row;
     border-bottom: 1px solid rgb(12, 11, 11);
     padding-bottom: 15px;
     margin: 5px;
+    align-items: center;
+      
 }
 
 .itemsCarrito .botonEliminar{
@@ -212,11 +213,7 @@ width: 400px;
     
 }
 
-.itemsCarrito .botonCantidad{
-    align-items: center;
-    text-align: center;
-    
-}
+
 /*inicio de media queries*/
 
 @media (max-width: 768px) {

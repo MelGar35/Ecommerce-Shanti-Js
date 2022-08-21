@@ -1,4 +1,3 @@
-
 //Logueo usuario en seccion Productos
 
 let datosIngresoSesion = []
@@ -7,14 +6,14 @@ const inputMail = document.querySelector("#inputMail")
 const inputClave = document.querySelector("#inputClave")
 const botonEnviar = document.querySelector("#enviar")
 
-botonEnviar.addEventListener("click", ()=>{
+botonEnviar.addEventListener("click", () => {
     datosIngresoSesion.push(inputMail.value)
     datosIngresoSesion.push(inputClave.value)
     inputMail.value = ""
     inputClave.value = ""
     sessionStorage.setItem("datosIngresoSesion", JSON.stringify(datosIngresoSesion))
     console.log(datosIngresoSesion);
-} )
+})
 
 const datosIngresoGuardados = JSON.parse(sessionStorage.getItem("datosIngresoSesion"))
 
@@ -28,11 +27,11 @@ let carrito = []
 const productos = [producto1, producto2, producto3, producto4, producto5]
 
 const cardContainerQuery = document.querySelector("#cardContainer")
-const itemsCarritoQuery = document.querySelector("#itemsCarrito")//nuevo
 
-productos.forEach ((producto)=> {
+
+productos.forEach((producto) => {
     const nuevoDiv = document.createElement("div")
-    nuevoDiv.innerHTML= `
+    nuevoDiv.innerHTML = `
     <h3 class="cardTitle">${producto.producto}</h3><br>
     <img src="${producto.imgSrc}" class="cardImg">
     <p class="cardDesc">${producto.descripcion}</p><br>
@@ -45,11 +44,11 @@ productos.forEach ((producto)=> {
 
 //Evento click sobre botón Agregar al carrito. 
 
-const botonesCarrito = document.querySelectorAll(".butonCTA") 
+const botonesCarrito = document.querySelectorAll(".butonCTA")
 
 const agregarProducto = (e) => {
-    e.target.innerHTML= "Agregaste este producto"
-    
+    e.target.innerHTML = "Agregaste este producto"
+
 }
 botonesCarrito.forEach((boton) => {
     boton.addEventListener("click", agregarProducto)
@@ -57,16 +56,18 @@ botonesCarrito.forEach((boton) => {
 })
 
 //Contenido carrito nuevoi
+const itemsCarritoQuery = document.querySelector("#itemsCarrito") //nuevo
 
 
-    const nuevoDiv2=document.createElement("div")
-    nuevoDiv2.innerHTML=`
-    <img src="${producto.imgSrc}" alt="porta-sahumo" width="6%">
+    productos.forEach((producto) => {
+        const itemsCarrito = document.createElement("itemCarrito")
+        itemsCarrito.className= "itemsCarrito itemsCarritoContainer"
+        itemsCarrito.innerHTML = `
+    <img src="${producto.imgSrc}" alt="${producto.modelo}" width="6%">
+    <h3 class="cardTitle">${producto.producto}</h3>
     <span class="cardPrice">$${producto.precio}.-</span>
-    <input class="cantidad" type="number" value="1">
+    <input class="botonCantidad" type="number" value="1">
     <button class="botonEliminar" type="button">X</button>`
-    nuevoDiv2.className="items"
-    cardContainerQuery.append(itemsCarrito)
+        itemsCarritoQuery.append(itemsCarrito)
 
-
-
+    })
