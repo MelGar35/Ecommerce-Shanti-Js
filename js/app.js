@@ -94,7 +94,7 @@ const renderizarItemsCarrito=()=>{
     })
 }
 
-//Eliminar un producto, se me borra solo si apreto afuera
+//Eliminar un producto
   
 
  const eliminarProducto= (e) =>{
