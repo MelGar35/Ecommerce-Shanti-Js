@@ -57,7 +57,10 @@ const agregarProducto = (e) => {
     carrito.push(productoElegido)
     renderizarItemsCarrito()
     localStorage.setItem("carrito", JSON.stringify(carrito))
-    //aca voy a agregar la libreria
+    Toast.fire({
+        icon: 'success',
+        title: 'El producto se agrego al carrito!'
+      })
     const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
     console.log(carritoGuardado)
 }
@@ -91,32 +94,6 @@ const renderizarItemsCarrito=()=>{
     })
 }
 
-
-/*ontenido carrito nuevo
-
-const itemsCarritoQuery = document.querySelector("#itemsCarrito") //nuevo
-
-const renderizarItemsCarrito=()=>{
-    productos.forEach((producto) => {
-        const itemsCarrito = document.createElement("div")
-        itemsCarrito.className= "itemsCarritoContainer"
-        itemsCarrito.classList.add("itemCarrito")
-        itemsCarrito.innerHTML = `
-    <div class="itemCarrito">
-    <img src="${producto.imgSrc}" class="imgCarrito" alt="${producto.modelo}" width="6%">
-    <h3 class="cardTitle">${producto.modelo}</h3>
-    </div>
-    <span class="cardPrice">$${producto.precio}.-</span>
-    <input class="botonCantidad" type="number" value="1">
-    <button class="botonEliminar" type="button">X</button>`
-        itemsCarritoQuery.append(itemsCarrito)
-    })
-    
-    }
-   renderizarItemsCarrito()
-
-*/
-
 //Eliminar un producto, se me borra solo si apreto afuera
   
 
@@ -126,7 +103,6 @@ const renderizarItemsCarrito=()=>{
    renderizarItemsCarrito()
     
  }
-
 
 
 //vaciar carrito 

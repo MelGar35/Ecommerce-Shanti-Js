@@ -15,3 +15,18 @@ class Producto {
     const producto3 = new Producto (357, 'Mazo Tarot Viceversa','../Img/tarotviceversa.jpg','viceversa', 'Autora:Lunaea Weatherstone', 2500)
     const producto4 = new Producto (358, 'Oráculo del Gato','../Img/oraculodelgato.jpg','oraculo', 'Autora: La Watson', 1200)
     const producto5 = new Producto (359, 'Sahumo Akasha','../Img/sahumos.jpg','sahumo','Romero, Lavanda, Canela y palo santo', 600)
+
+
+    // SWEETALERT
+
+    const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
