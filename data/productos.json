@@ -1,0 +1,42 @@
+[
+    {
+        "id": 355,
+        "producto": "Porta Sahumerio Hanuman",
+        "imgSrc": "../Img/portasahumeriohanuman.jpg",
+        "modelo": "hanuman",
+        "descripcion": "De cerámica, pintado a mano",
+        "precio": 1000
+    },
+    {
+        "id": 356,
+        "producto": "El Tarot como Llave",
+        "imgSrc": "../Img/tarotcomollave.jpg",
+        "modelo": "llave",
+        "descripcion": "Autor: Dalia Walker",
+        "precio": 4800
+    },
+    {
+        "id": 357,
+        "producto": "Mazo Tarot Viceversa",
+        "imgSrc": "../Img/tarotviceversa.jpg",
+        "modelo": "viceversa",
+        "descripcion": "Autora:Lunaea Weatherstone",
+        "precio": 2500
+    },
+    {
+        "id": 358,
+        "producto": "Oráculo del Gato",
+        "imgSrc": "../Img/oraculodelgato.jpg",
+        "modelo": "oraculo",
+        "descripcion": "Autora: La Watson",
+        "precio": 1200
+    },
+    {
+        "id": 359,
+        "producto": "Sahumo Akasha",
+        "imgSrc": "../Img/sahumos.jpg",
+        "modelo": "sahumo",
+        "descripcion": "Romero, Lavanda, Canela y palo santo",
+        "precio": 600
+    }
+]

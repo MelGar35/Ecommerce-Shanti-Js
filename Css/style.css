@@ -178,7 +178,11 @@ width: 400px;
     align-items: center;
     
 }
-
+.botonesCompra{
+    display: flex;
+    flex-direction: column;
+    
+}
 .btn-comprar{
     background-color: rgb(169, 112, 170);
     padding: 5px;
@@ -235,6 +239,13 @@ width: 400px;
     width: 35px;
 }
 
+.btn-vaciar-carrito{
+    background-color: rgb(169, 112, 170);
+    padding: 5px;
+    color:aliceblue;
+    border: solid rgb(169, 112, 170);
+    border-radius: 7px;
+}
 
 /*inicio de media queries*/
 

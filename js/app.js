@@ -26,7 +26,15 @@ let carrito
 
 carrito = JSON.parse(localStorage.getItem("carrito")) || [] 
 
-const productos = [producto1, producto2, producto3, producto4, producto5]
+let productos = []
+
+const getAllProductos = async () => {
+    const response = await fetch("../data/productos.json")
+    const data = await response.json()
+    productos = data
+    renderizarProductos(productos)
+}
+
 
 const cardContainerQuery = document.querySelector("#cardContainer")
 
@@ -57,9 +65,9 @@ const agregarProducto = (e) => {
     carrito.push(productoElegido)
     renderizarItemsCarrito()
     localStorage.setItem("carrito", JSON.stringify(carrito))
-    Toast.fire({
+    Swal.fire({
         icon: 'success',
-        title: 'El producto se agrego al carrito!'
+        title: 'Agregaste este producto!'
       })
     const carritoGuardado = JSON.parse(localStorage.getItem("carrito"))
     console.log(carritoGuardado)
@@ -69,7 +77,7 @@ const agregarProducto = (e) => {
 
 const itemsCarritoQuery = document.querySelector("#itemsCarrito")
 
-//Mostrar productos en carrito 
+//Mostrar productos elegidos en carrito 
 
 const renderizarItemsCarrito=()=>{
     itemsCarritoQuery.innerHTML=""
@@ -87,23 +95,27 @@ const renderizarItemsCarrito=()=>{
     <button class="botonEliminar" data-id=${producto.id} type="button">X</button>`
 
     itemsCarritoQuery.append(itemsCarrito)
-
+    carritoTotalActualizado()   //nuevo 
     })
     document.querySelectorAll(".botonEliminar").forEach((boton)=>{
         boton.addEventListener("click", eliminarProducto)
     })
 }
 
+const carritoTotalActualizado = () => { //nuevo
+   let total = 0
+   const carritoTotal = document.querySelectorAll(".carritoTotal")
+}
+
+
+
 //Eliminar un producto
   
-
- const eliminarProducto= (e) =>{
+ const eliminarProducto = (e) =>{
    const productoIdElegido = e.target.getAttribute("data-id")
    carrito = carrito.filter((producto)=>producto.id!=productoIdElegido)
-   renderizarItemsCarrito()
-    
+   renderizarItemsCarrito()  
  }
-
 
 //vaciar carrito 
 
@@ -116,5 +128,6 @@ const vaciarCarritoGuardado = () => {
 
 vaciarCarrito.addEventListener("click", vaciarCarritoGuardado)
 
+
 //Ejecucion 
- renderizarProductos(productos)
+getAllProductos()
