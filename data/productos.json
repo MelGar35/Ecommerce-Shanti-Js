@@ -5,7 +5,8 @@
         "imgSrc": "../Img/portasahumeriohanuman.jpg",
         "modelo": "hanuman",
         "descripcion": "De cerámica, pintado a mano",
-        "precio": 1000
+        "precio": 1000,
+        "cantidad": 1
     },
     {
         "id": 356,
@@ -13,7 +14,8 @@
         "imgSrc": "../Img/tarotcomollave.jpg",
         "modelo": "llave",
         "descripcion": "Autor: Dalia Walker",
-        "precio": 4800
+        "precio": 4800,
+        "cantidad": 1
     },
     {
         "id": 357,
@@ -21,7 +23,8 @@
         "imgSrc": "../Img/tarotviceversa.jpg",
         "modelo": "viceversa",
         "descripcion": "Autora:Lunaea Weatherstone",
-        "precio": 2500
+        "precio": 2500,
+        "cantidad": 1
     },
     {
         "id": 358,
@@ -29,7 +32,8 @@
         "imgSrc": "../Img/oraculodelgato.jpg",
         "modelo": "oraculo",
         "descripcion": "Autora: La Watson",
-        "precio": 1200
+        "precio": 1200,
+        "cantidad": 1
     },
     {
         "id": 359,
@@ -37,6 +41,7 @@
         "imgSrc": "../Img/sahumos.jpg",
         "modelo": "sahumo",
         "descripcion": "Romero, Lavanda, Canela y palo santo",
-        "precio": 600
+        "precio": 600,
+        "cantidad": 1
     }
 ]
