@@ -87,12 +87,14 @@ const carritoTotalActualizado = () => {
 //Eliminar un producto
 const eliminarProducto = (e) =>{
     const productoIdElegido = e.target.getAttribute("data-id")
-    reestablecerCantidad()
+    const productoElegido = productos.find((producto)=>producto.id==productoIdElegido)
+    productoElegido.cantidad = 1
     carrito = carrito.filter((producto)=>producto.id!=productoIdElegido)
     const importeTotal = document.querySelector(".importeTotal")
     importeTotal.innerHTML= "$0.-"
     renderizarItemsCarrito()  
     carritoTotalActualizado()
+    
 }
 
 
