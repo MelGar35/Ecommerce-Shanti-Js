@@ -35,8 +35,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border-bottom: 3px solid black; 
-         
+    border-bottom: 3px solid black;       
 }
 
 .grid-main{
@@ -168,7 +167,6 @@ width: 400px;
     padding: 5px;
     margin: 5px;
     border-bottom: 1px solid rgb(12, 11, 11);
-
 }
 
 .carrito .carrito-total{
@@ -176,20 +174,19 @@ width: 400px;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    
 }
+
 .botonesCompra{
     display: flex;
     flex-direction: column;
-    
 }
+
 .btn-comprar{
     background-color: rgb(169, 112, 170);
     padding: 5px;
     color:aliceblue;
     border: solid rgb(169, 112, 170);
     border-radius: 7px;
-
 }
 
 .botonAgregar{
@@ -206,9 +203,7 @@ width: 400px;
     justify-content:space-around;
     padding-bottom: 15px;
     margin: 5px;
-
 }
-
 
 .itemsCarrito .botonEliminar{
     background-color: rgb(169, 112, 170);
@@ -216,22 +211,19 @@ width: 400px;
     padding: 10px;
     border-radius: 5px ;
     border: solid rgb(169, 112, 170);
-    
 }
 
 .itemCarrito{
     display: flex;
     justify-content:space-around;
     align-items: center;
-
- 
 }
 
 .imgCarrito{
     width: 50px;
-    padding: 20px;
-    
+    padding: 20px;   
 }
+
 .botonCantidad{
     height: 20px;
     text-align: center;
