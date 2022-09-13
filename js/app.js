@@ -94,9 +94,7 @@ const eliminarProducto = (e) =>{
     importeTotal.innerHTML= "$0.-"
     renderizarItemsCarrito()  
     carritoTotalActualizado()
-    
 }
-
 
 //Reestablecer cantidad
 const reestablecerCantidad = () => {
